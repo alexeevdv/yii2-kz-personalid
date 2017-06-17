@@ -64,13 +64,13 @@ use alexeevdv\kz\PersonalidHelper;
 
 $personalid = '850407301166';
 
-/** @var \DateTime $birtdate = 1985-04-07  
+/** @var \DateTime $birtdate = 1985-04-07 */  
 $birtdate = PersonalidHelper::getBirthDate($personalid);
 
-/** @var int $sex = PersonalidHelper::SEX_MALE
+/** @var int $sex = PersonalidHelper::SEX_MALE */
 $sex = PersonalidHelper::getSex($personalid);
 
-/** @var string $serialNumber = 0116
+/** @var string $serialNumber = 0116 */
 $serialNumber = PersonalidHelper::getSerialNumber($personalid);
 ```
 
