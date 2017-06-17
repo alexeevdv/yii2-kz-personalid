@@ -61,16 +61,16 @@ class PersonalidValidator extends Validator
         return <<<JS
             (function (messages, value) {
                 if (value.length !== 12) {
-                    messages.push(message);
+                    messages.push($message);
                     return;
                 }
                 if (!$.isNumeric(value)) {
-                   messages.push(message);
+                   messages.push($message);
                    return;
                 }
-                var centryFlag = value.substr(6, 1);
-                if ($.inArray(centryFlag, ['1', '2', '3', '4', '5', '6'])) {
-                   messages.push(message);
+                var centuryFlag = parseInt(value.substr(6, 1));
+                if (centuryFlag < 1 || centuryFlag > 6) {
+                   messages.push($message);
                    return;
                 }
                 
@@ -95,7 +95,7 @@ class PersonalidValidator extends Validator
                 };
                 
                 if (parseInt(value.substr(11, 1)) !== calculateChecksum(value)) {
-                    messages.push(message);
+                    messages.push($message);
                 }
             })(messages, value);
 JS;
