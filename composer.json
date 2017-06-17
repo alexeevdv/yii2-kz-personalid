@@ -1,0 +1,28 @@
+{
+    "name": "alexeevdv/yii2-kz-personalid-validator",
+    "type": "yii2-extension",
+    "support": {
+        "source": "https://github.com/alexeevdv/yii2-kz-personalid-validator",
+        "issues": "https://github.com/alexeevdv/yii2-kz-personalid-validator/issues"
+    },
+    "require": {
+        "yiisoft/yii2": "^2.0"
+    },
+    "require-dev": {
+        "yiisoft/yii2-coding-standards": "^2.0",
+        "codeception/codeception": "^2.3"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dmitry Alekseev",
+            "homepage": "https://alexeevdv.ru/",
+            "email": "mail@alexeevdv.ru"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "alexeevdv\\kz\\": "src"
+        }
+    }
+}
