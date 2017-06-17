@@ -1,4 +1,4 @@
-yii2-kz-personaid-validator
+yii2-kz-personalid
 ===========
 
 [![Build Status](https://travis-ci.org/alexeevdv/yii2-kz-personalid.svg?branch=master)](https://travis-ci.org/alexeevdv/yii2-kz-personalid)
