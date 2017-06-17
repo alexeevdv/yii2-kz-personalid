@@ -18,13 +18,13 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-$ php composer.phar require alexeevdv/yii2-kz-personaid ^1.0
+$ php composer.phar require alexeevdv/yii2-kz-personalid ^1.0
 ```
 
 or add
 
 ```
-"alexeevdv/yii2-kz-personaid": "^1.0"
+"alexeevdv/yii2-kz-personalid": "^1.0"
 ```
 
 to the ```require``` section of your `composer.json` file.
