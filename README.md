@@ -9,7 +9,6 @@ https://ru.wikipedia.org/wiki/%D0%98%D0%BD%D0%B4%D0%B8%D0%B2%D0%B8%D0%B4%D1%83%D
 It contains:
  - Both server-side and client-side validators
  - Helper to fetch data from identification number
- - Faker data provider to generate identification numbers
 
 ## Installation
 
@@ -72,14 +71,4 @@ $sex = PersonalidHelper::getSex($personalid);
 
 /** @var string $serialNumber = 0116 */
 $serialNumber = PersonalidHelper::getSerialNumber($personalid);
-```
-
-### Faker provider
-
-```php
-use alexeevdv\kz\PersonalidFakerProvider;
-
-$faker = new \Faker\Generator();
-$faker->addProvider(new PersonalidFakerProvider($faker));
-$personalid = $faker->personalid();
 ```
