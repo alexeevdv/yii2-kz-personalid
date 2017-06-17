@@ -77,7 +77,9 @@ $serialNumber = PersonalidHelper::getSerialNumber($personalid);
 ### Faker provider
 
 ```php
+use alexeevdv\kz\PersonalidFakerProvider;
+
 $faker = new \Faker\Generator();
-$faker->addProvider(new \alexeevdv\kz\faker\provider\Personalid($faker));
+$faker->addProvider(new PersonalidFakerProvider($faker));
 $personalid = $faker->personalid();
 ```

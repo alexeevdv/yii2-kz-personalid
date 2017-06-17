@@ -1,6 +1,6 @@
 <?php
 
-namespace tests\faker\provider;
+namespace tests;
 
 use alexeevdv\kz\PersonalidValidator;
 
@@ -8,7 +8,7 @@ use alexeevdv\kz\PersonalidValidator;
  * Class PersonalidTest
  * @package tests\faker\provider
  */
-class PersonalidTest extends \Codeception\Test\Unit
+class PersonalidFakerProviderTest extends \Codeception\Test\Unit
 {
     /**
      * Tests personalid provider
@@ -16,7 +16,7 @@ class PersonalidTest extends \Codeception\Test\Unit
     public function testProvider()
     {
         $faker = new \Faker\Generator();
-        $faker->addProvider(new \alexeevdv\kz\faker\provider\Personalid($faker));
+        $faker->addProvider(new \alexeevdv\kz\PersonalidFakerProvider($faker));
 
         $personalid = $faker->personalid();
 

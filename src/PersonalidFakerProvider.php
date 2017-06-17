@@ -1,14 +1,14 @@
 <?php
 
-namespace alexeevdv\kz\faker\provider;
+namespace alexeevdv\kz;
 
 use alexeevdv\kz\PersonalidHelper;
 
 /**
  * Class Personalid
- * @package alexeevdv\kz\faker\provider
+ * @package alexeevdv\kz
  */
-class Personalid extends \Faker\Provider\Base
+class PersonalidFakerProvider extends \Faker\Provider\Base
 {
     /**
      * @return string
