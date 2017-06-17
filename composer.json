@@ -1,9 +1,9 @@
 {
-    "name": "alexeevdv/yii2-kz-personalid-validator",
+    "name": "alexeevdv/yii2-kz-personalid",
     "type": "yii2-extension",
     "support": {
-        "source": "https://github.com/alexeevdv/yii2-kz-personalid-validator",
-        "issues": "https://github.com/alexeevdv/yii2-kz-personalid-validator/issues"
+        "source": "https://github.com/alexeevdv/yii2-kz-personalid",
+        "issues": "https://github.com/alexeevdv/yii2-kz-personalid/issues"
     },
     "require": {
         "yiisoft/yii2": "^2.0"
