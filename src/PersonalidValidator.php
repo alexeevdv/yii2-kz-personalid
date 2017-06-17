@@ -27,12 +27,6 @@ class PersonalidValidator extends Validator
      */
     public function validateValue($value)
     {
-        // required
-        $value = trim($value);
-        if (empty($value)) {
-            return [$this->message, []];
-        }
-
         if (strlen($value) !== 12) {
             return [$this->message, []];
         }
@@ -60,6 +54,9 @@ class PersonalidValidator extends Validator
         $message = json_encode($this->message, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
         return <<<JS
             (function (messages, value) {
+                if (!value.length) {
+                    return;
+                }
                 if (value.length !== 12) {
                     messages.push($message);
                     return;

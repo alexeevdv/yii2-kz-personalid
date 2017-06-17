@@ -46,9 +46,6 @@ class PersonalidValidatorTest extends \Codeception\Test\Unit
     public function validationDataProvider()
     {
         return [
-            // required
-            ['', ['Custom message', []]],
-            [' ', ['Custom message', []]],
             // 12 symbols
             ['12345678901', ['Custom message', []]],
             ['1234567890123', ['Custom message', []]],
