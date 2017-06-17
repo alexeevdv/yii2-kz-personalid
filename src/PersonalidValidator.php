@@ -1,12 +1,12 @@
 <?php
 
-namespace alexeevdv\kz\validators;
+namespace alexeevdv\kz;
 
 use yii\validators\Validator;
 
 /**
  * Class PersonalidValidator
- * @package alexeevdv\kz\validators
+ * @package alexeevdv\kz
  */
 class PersonalidValidator extends Validator
 {
@@ -46,7 +46,7 @@ class PersonalidValidator extends Validator
             return [$this->message, []];
         }
 
-        if (substr($value, 11, 1) != $this->calculateChecksum($value)) {
+        if (substr($value, 11, 1) != PersonalidHelper::calculateChecksum($value)) {
             return [$this->message, []];
         }
         return null;
@@ -99,30 +99,5 @@ class PersonalidValidator extends Validator
                 }
             })(messages, value);
 JS;
-    }
-
-    /**
-     * @param string $value
-     * @return int
-     */
-    private function calculateChecksum($value)
-    {
-        $sum = 0;
-        for ($i = 0; $i < 11; $i++) {
-            $sum = $sum + ($i + 1) * $value{$i};
-        }
-        $checksum = $sum % 11;
-        if ($checksum != 10) {
-            return $checksum;
-        }
-        $sum = 0;
-        for ($i = 0; $i < 11; $i++) {
-            $t = ($i + 3) % 11;
-            if ($t == 0) {
-                $t = 11;
-            }
-            $sum = $sum + $t * $value{$i};
-        }
-        return $sum % 11;
     }
 }

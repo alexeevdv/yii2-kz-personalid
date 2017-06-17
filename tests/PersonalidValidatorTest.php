@@ -1,8 +1,8 @@
 <?php
 
-namespace tests\validators;
+namespace tests;
 
-use alexeevdv\kz\validators\PersonalidValidator;
+use alexeevdv\kz\PersonalidValidator;
 
 /**
  * Class PersonalidValidatorTest
