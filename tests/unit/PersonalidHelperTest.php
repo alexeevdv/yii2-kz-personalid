@@ -1,13 +1,13 @@
 <?php
 
-namespace tests;
+namespace tests\unit;
 
 use alexeevdv\kz\PersonalidHelper;
 use yii\base\InvalidValueException;
 
 /**
  * Class PersonalidValidatorTest
- * @package tests\validators
+ * @package tests\unit
  */
 class PersonalidHelperTest extends \Codeception\Test\Unit
 {

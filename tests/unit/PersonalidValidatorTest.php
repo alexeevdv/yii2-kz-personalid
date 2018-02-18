@@ -1,43 +1,29 @@
 <?php
 
-namespace tests;
+namespace testsunit;
 
 use alexeevdv\kz\PersonalidValidator;
+use yii\base\Model;
 
 /**
  * Class PersonalidValidatorTest
- * @package tests\validators
+ * @package tests\unit
  */
 class PersonalidValidatorTest extends \Codeception\Test\Unit
 {
     /**
-     * @var PersonalidValidator
+     * @var \tests\UnitTester
      */
-    private $_validator;
-
-    /**
-     * @inheritdoc
-     */
-    protected function _before()
-    {
-        $this->_validator = new PersonalidValidator;
-        $this->_validator->message = 'Custom message';
-    }
-
-    /**
-     * @inheritdoc
-     */
-    protected function _after()
-    {
-    }
-
+    public $tester;
 
     /**
      * @dataProvider validationDataProvider
      */
     public function testValidation($value, $error)
     {
-        $this->assertEquals($error, $this->_validator->validateValue($value), $value);
+        $validator = new PersonalidValidator;
+        $validator->message = 'Custom message';
+        $this->tester->assertEquals($error, $validator->validateValue($value), $value);
     }
 
     /**
@@ -66,5 +52,15 @@ class PersonalidValidatorTest extends \Codeception\Test\Unit
             ['850407801168', ['Custom message', []]],
             ['850407901164', ['Custom message', []]],
         ];
+    }
+
+    /**
+     * @test
+     */
+    public function clientValidateAttribute()
+    {
+        $validator = new PersonalidValidator;
+        $js = $validator->clientValidateAttribute(new Model, 'attribute', 'view');
+        $this->tester->assertNotEmpty($js, 'There should be some JS for client validation');
     }
 }
